@@ -1,0 +1,252 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style type="text/css">
+    
+  .zhezhao{
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        background: #000;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 9999
+        }
+  .tankuang{
+        position: relative;
+        background: #fff;
+        width: 50%;
+        height: 80%;
+        overflow:auto;
+        border-radius: 5px;
+        margin: 5% auto;
+          opacity: 1;
+      }
+  
+   .tankuang1{
+        position: relative;
+        overflow:auto;
+        background: #fff;
+        width: 50%;
+        height: 93%;
+        border-radius: 5px;
+        margin: 3% auto;
+          opacity: 1;
+      }
+  
+  #header{
+            height: 40px;
+        }
+  #header-right{
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+        background: red;
+        color: #fff;
+        right: 5px;
+        top: 5px;
+        text-align: center;
+  }
+  
+  th.th1,td.td1{
+      border: 1px solid #999;
+      width: 400px;
+      text-align: center;
+      padding: 20px 0;
+  }
+  th.th2,td.td2{
+      border: 1px solid #999;
+      width: 400px;
+      text-align: center;
+      padding: 13px 0;
+  }
+  
+  </style>
+
+<div class="zhezhao" id='zhezhao2'>
+  <div class="tankuang" style="text-align:center;">
+  <div id="header" style="margin:5%">
+  <table border="1" width="450" style=" table-layout: fixed; text-align:center; border-collapse: collapse; margin:auto; " >
+  <thead style="margin-top:100px;">
+    <tr style="background-color: #4755AB; color: #fff; margin-top: 100px;">
+      <p style="color: #fff; size: 1px;">  123 </p>
+        <td class="td1" colspan="6">详细信息</td>
+      </tr>
+  </thead>
+  <tbody>
+    <tr  style="background-color: #eee; ">
+        <th class="th1">名称</th>
+        <td class="td1 zhezhao2-title" colspan="5">{% for picture in pictures %}
+          {% if picture.URL==name %}
+              {{picture.title}}
+          {% endif %}
+      {% endfor %}</td>
+      </tr>
+      <tr>
+          <th class="th1">尺寸</th>
+          <td class="td1 zhezhao2-resolution" colspan="2">{% for picture in pictures %}
+            {% if picture.URL==name %}
+                {{picture.resolution}}
+            {% endif %}
+        {% endfor %}</td>
+          <th class="th1">大小</th>
+          <td class="td1 zhezhao2-size" colspan="2">{% for picture in pictures %}
+            {% if picture.URL==name %}
+                {{picture.size}}
+            {% endif %}
+        {% endfor %}</td>
+        </tr>
+
+      <tr style="background-color: #eee; ">
+        <th class="th1">拍摄地点</th>
+        <td class="td1 zhezhao2-pro_loca" colspan="2">{% for picture in pictures %}
+          {% if picture.URL==name %}
+              {{picture.pro_loca}}
+          {% endif %}
+      {% endfor %}</td>
+        <th class="th1" class="th1">拍摄时间</th>
+        <td class="td1 zhezhao2-pic_date" colspan="2">{% for picture in pictures %}
+          {% if picture.URL==name %}
+              {{picture.pic_date}}
+          {% endif %}
+      {% endfor %}</td>
+      </tr>
+      <tr>
+        <th class="th1">上传时间</th>
+        <td class="td1 zhezhao2-release_date" colspan="2">{% for picture in pictures %}
+          {% if picture.URL==name %}
+              {{picture.release_date}}
+          {% endif %}
+      {% endfor %}</td>
+        <th class="th1">文件类型</th>
+        <td class="td1 " colspan="2"></td>
+      </tr>
+      <tr style="background-color: #eee; ">
+        <th class="th1">表演者</th>
+        <td class="td1 zhezhao2-individual_name" colspan="2">{% for picture in pictures %}
+          {% if picture.URL==name %}
+              {{picture.individual_name}}
+          {% endif %}
+      {% endfor %}</td>
+        <th class="th1">表演单位</th>
+        <td class="td1 zhezhao2-group_name" colspan="2">{% for picture in pictures %}
+          {% if picture.URL==name %}
+              {{picture.group_name}}
+          {% endif %}
+      {% endfor %}</td>
+      </tr>
+
+    </tbody>
+  </table>
+  <p style="color:#fff">12</p>
+          <div id="header-right" onclick="hidder2()">x</div>
+      </div>
+  </div>
+</div>
+<script type="text/javascript">
+  document.getElementById('zhezhao2').style.display="none";
+  function dianwo2(){
+      document.getElementById('zhezhao2').style.display="";
+  }
+  function hidder2(){
+      document.getElementById('zhezhao2').style.display="none";
+  }
+</script>
+
+ <div class="container-fluid content-top-gap">
+
+        <!-- breadcrumbs -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb my-breadcrumb">            </ol>
+        </nav>
+        <!-- //breadcrumbs -->
+        <!-- forms -->
+        <section class="forms">
+
+            <div class="cards__heading">
+                <h3>图片查看</h3>
+              </div>  
+                  <!-- content block style 5 -->
+    <div class="card card_border p-lg-5 p-3 mb-4">
+        <div class="card-body py-2 p-0">
+          <div class="row cwp23-content align-items-lg-center">
+            <div class="cwp23-img col-md-6 pt-md-4 mt-md-0 mt-3">
+                <img alt="XinJiang" height="450" src="{{ url_for('static', filename=name)}}" width="600"/>
+            </div>
+            <div class="cwp23-text col-md-6 mt-4 mt-md-0 pl-md-4">
+              <div class="cwp23-title">
+                <h3 >{% for picture in pictures %}
+                    {% if picture.URL==name %}
+                        {{picture.title}}
+                    {% endif %}
+                {% endfor %}</h3>
+              </div>
+              <div class="row cwp23-text-cols">
+                <div class="column col-lg-6 mt-4">
+                  <h4 class="text-primary">表演者</h4>
+                  <p >{% for picture in pictures %}
+                    {% if picture.URL==name %}
+                        {{picture.individual_name}}
+                    {% endif %}
+                {% endfor %}</p>
+                </div>
+                <div class="column col-lg-6 mt-4">
+                  <h4 class="text-primary">表演单位</h4>
+                  <p>{% for picture in pictures %}
+                    {% if picture.URL==name %}
+                        {{picture.pro_loca}}
+                    {% endif %}
+                {% endfor %}</p>
+                </div>
+                <div class="column col-lg-6 mt-4">
+                  <h4 class="text-primary">图片尺寸</h4>
+                  <p>{% for picture in pictures %}
+                    {% if picture.URL==name %}
+                        {{picture.resolution}}
+                    {% endif %}
+                {% endfor %}</p>
+                </div>
+                <div class="column col-lg-6 mt-4">
+                  <h4 class="text-primary">图片大小</h4>
+                  <p>{% for picture in pictures %}
+                    {% if picture.URL==name %}
+                        {{picture.size}}
+                    {% endif %}
+                {% endfor %} </p>
+                </div>
+                <div class="column col-lg-6 mt-4">
+                    <h4 class="text-primary">发布日期</h4>
+                    <p>{% for picture in pictures %}
+                        {% if picture.URL==name %}
+                            {{picture.release_date}}
+                        {% endif %}
+                    {% endfor %} </p>
+                  </div>
+                  <div class="column col-lg-6 mt-4">
+                    <h4 class="text-primary">拍摄日期</h4>
+                    <p >{% for picture in pictures %}
+                        {% if picture.URL==name %}
+                            {{picture.pic_date}}
+                        {% endif %}
+                    {% endfor %} </p>
+                  </div>
+
+                  <button type="button" style="margin-left:300px; margin-top:70px" class="btn btn-primary btn-style" onclick="dianwo2()" >details</button>
+                  
+              </div>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+        </section>
+        <!-- //forms -->
+        </section>
+        <!-- //forms  -->
+    </div>
+{% endblock %}

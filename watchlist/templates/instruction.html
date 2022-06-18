@@ -1,0 +1,344 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style type="text/css">
+    
+  .zhezhao{
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        background: #000;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 9999
+        }
+
+  
+   .tankuang1{
+        position: relative;
+        overflow:auto;
+        background: #fff;
+        width: 65%;
+        height: 93%;
+        border-radius: 5px;
+        margin: 3% auto;
+          opacity: 1;
+      }
+  
+  #header{
+            height: 40px;
+        }
+  #header-right{
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        border-radius: 5px;
+        background: red;
+        color: #fff;
+        right: 5px;
+        top: 5px;
+        text-align: center;
+  }
+  
+  th.th1,td.td1{
+      border: 1px solid #999;
+      width: 500px;
+      text-align: center;
+      padding: 25px 0;
+  }
+  th.th2,td.td2{
+      border: 1px solid #999;
+      width: 450px;
+      text-align: center;
+      padding: 18px 0;
+  }
+  
+  </style>
+  <div class="zhezhao" id='zhezhao1'>
+    <div class="tankuang1" style="text-align:center;">
+    <div id="header" style="margin:5%">
+    <table border="1" width="600" style=" height: 100px; text-align:center; border-collapse: collapse; margin:auto; " >
+    <thead style="margin-top:100px;">
+      <tr style="background-color: #4755AB; color: #fff; margin-top: 100px;">
+        <p style="color: #fff; size: 1px; padding: 0;">  123 </p>
+          <td class="td2" colspan="6">详细信息</td>
+        </tr>
+    </thead>
+    <tbody>
+      <tr  style="background-color: #eee; ">
+          <th class="th2">名称</th>
+          <td class="td2 zhezhao1-title" colspan="5">{% for instruction in instructions %}
+            {% if instruction.URL==name %}
+                {{instruction.title}}
+            {% endif %}
+        {% endfor %}</td>
+        </tr>
+        <tr >
+          <th class="th2">序号</th>
+          <td class="td2 zhezhao1-id" >{% for instruction in instructions %}
+            {% if instruction.URL==name %}
+                {{instruction.id}}
+            {% endif %}
+        {% endfor %}</td>
+          <th class="th2">种类</th>
+          <td class="td2 zhezhao1-program_type" >{% for instruction in instructions %}
+            {% if instruction.URL==name %}
+                {{instruction.program_type}}
+            {% endif %}
+        {% endfor %}</td>
+          <th class="th2">字幕</th>
+          <td class="td2 zhezhao1-subtitle" >{% for instruction in instructions %}
+            {% if instruction.URL==name %}
+                {{instruction.subtitle}}
+            {% endif %}
+        {% endfor %}</td>
+        </tr>
+  
+        <tr style="background-color: #eee; ">
+            <th class="th2">大小</th>
+            <td class="td2 zhezhao1-size" >{% for instruction in instructions %}
+              {% if instruction.URL==name %}
+                  {{instruction.size}}
+              {% endif %}
+          {% endfor %}</td>
+            <th class="th2">时长</th>
+            <td class="td2 zhezhao1-length" >{% for instruction in instructions %}
+              {% if instruction.URL==name %}
+                  {{instruction.length}}
+              {% endif %}
+          {% endfor %}</td>
+            <th class="th2">采样率</th>
+            <td class="td2 zhezhao1-audio_sampling_frequency" >{% for instruction in instructions %}
+              {% if instruction.URL==name %}
+                  {{instruction.audio_sampling_frequency}}
+              {% endif %}
+          {% endfor %}</td>
+          </tr>
+          <tr >
+            <th class="th2">比特率</th>
+            <td class="td2 zhezhao1-bit_rate" >{% for instruction in instructions %}
+              {% if instruction.URL==name %}
+                  {{instruction.bit_rate}}
+              {% endif %}
+          {% endfor %}</td>
+            <th class="th2">信息率</th>
+            <td class="td2 zhezhao1-data_rate" >{% for instruction in instructions %}
+              {% if instruction.URL==name %}
+                  {{instruction.data_rate}}
+              {% endif %}
+          {% endfor %}</td>
+            <th class="th2">总比特率</th>
+            <td class="td2 zhezhao1-total_bitrate" >{% for instruction in instructions %}
+              {% if instruction.URL==name %}
+                  {{instruction.total_bitrate}}
+              {% endif %}
+          {% endfor %}</td>
+          </tr>
+          <tr style="background-color: #eee; ">
+            <th class="th2">纵横比</th>
+            <td class="td2 zhezhao1-aspect_ratio" >{% for instruction in instructions %}
+              {% if instruction.URL==name %}
+                  {{instruction.aspect_ratio}}
+              {% endif %}
+          {% endfor %}</td>
+            <th class="th2">奖项</th>
+            <td class="td2 zhezhao1-award" >{% for instruction in instructions %}
+              {% if instruction.URL==name %}
+                  {{instruction.award}}
+              {% endif %}
+          {% endfor %}</td>
+            <th class="th2">系列</th>
+            <td class="td2 zhezhao1-series" >{% for instruction in instructions %}
+              {% if instruction.URL==name %}
+                  {{instruction.series}}
+              {% endif %}
+          {% endfor %}</td>
+          </tr>
+        <tr >
+          <th class="th2">录制日期</th>
+          <td class="td2 zhezhao1-video_date" colspan="2">{% for instruction in instructions %}
+            {% if instruction.URL==name %}
+                {{instruction.video_date}}
+            {% endif %}
+        {% endfor %}</td>
+          <th class="th2" >发布日期</th>
+          <td class="td2 zhezhao1-release_date" colspan="2">{% for instruction in instructions %}
+            {% if instruction.URL==name %}
+                {{instruction.release_date}}
+            {% endif %}
+        {% endfor %}</td>
+        </tr>
+        <tr style="background-color: #eee; ">
+          <th class="th2">来源</th>
+          <td class="td2 zhezhao1-resource" colspan="2">{% for instruction in instructions %}
+            {% if instruction.URL==name %}
+                {{instruction.resource}}
+            {% endif %}
+        {% endfor %}</td>
+          <th class="th2">提供者</th>
+          <td class="td2 zhezhao1-producer" colspan="2">{% for instruction in instructions %}
+            {% if instruction.URL==name %}
+                {{instruction.provider}}
+            {% endif %}
+        {% endfor %}</td>
+        </tr>
+  
+        <tr >
+          <th class="th2">出品地</th>
+          <td class="td2 zhezhao1-pro_loca" colspan="2">{% for instruction in instructions %}
+            {% if instruction.URL==name %}
+                {{instruction.pro_loca}}
+            {% endif %}
+        {% endfor %}</td>
+          <th class="th2">责任人</th>
+          <td class="td2 zhezhao1-producer" colspan="2">{% for instruction in instructions %}
+            {% if instruction.URL==name %}
+                {{instruction.producer}}
+            {% endif %}
+        {% endfor %}</td>
+        </tr>
+        <tr style="background-color: #eee; ">
+          <th class="th2">表演类型</th>
+          <td class="td2 zhezhao1-performance_form" colspan="2">{% for instruction in instructions %}
+            {% if instruction.URL==name %}
+                {{instruction.performance_form}}
+            {% endif %}
+        {% endfor %}</td>
+          <th class="th2">声道数</th>
+          <td class="td2 zhezhao1-sound_track" colspan="2">{% for instruction in instructions %}
+            {% if instruction.URL==name %}
+                {{instruction.sound_track}}
+            {% endif %}
+        {% endfor %}</td>
+        </tr>
+  
+          
+      </tbody>
+    </table>
+    <p style="color:#fff">12</p>
+            <div id="header-right" onclick="hidder1()">x</div>
+        </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    document.getElementById('zhezhao1').style.display="none";
+    function dianwo1(){
+        document.getElementById('zhezhao1').style.display="";
+    }
+    function hidder1(){
+        document.getElementById('zhezhao1').style.display="none";
+    }
+  </script>
+ <div class="container-fluid content-top-gap">
+
+        <!-- breadcrumbs -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb my-breadcrumb">            </ol>
+        </nav>
+        <!-- //breadcrumbs -->
+        <!-- forms -->
+        <section class="forms">
+
+            <div class="cards__heading">
+                <h3>视频查看</h3>
+              </div>  
+    
+          <!-- content block style 7 -->
+    <div class="w3l-about1 card card_border p-lg-5 p-3 mb-4">
+        <div class="card-body py-3 p-0">
+          <h3 class="block__title mb-lg-4">{% for instruction in instructions %}
+            {% if instruction.URL==name %}
+                {{instruction.title}}
+            {% endif %}
+        {% endfor %}</h3>
+          <div class="row cwp23-content">
+            <div class="col-md-5 cwp23-text">
+              <div class="row cwp23-text-cols">
+                <div class="col-md-6 column mt-4">
+                  <a href="#url" style="color:#4755AB;   font-weight: 400;">分集数</a>
+                  <p>{% for instruction in instructions %}
+                    {% if instruction.URL==name %}
+                        {{instruction.episode}}
+                    {% endif %}
+                {% endfor %} </p>
+                </div>
+                <div class="col-md-6 column mt-4">
+                  <a href="#url" style="color:#4755AB;   font-weight: 400;">总集数</a>
+                  <p>{% for instruction in instructions %}
+                    {% if instruction.URL==name %}
+                        {{instruction.total_episodes}}
+                    {% endif %}
+                {% endfor %} </p>
+                </div>
+                <div class="col-md-6 column mt-4">
+                  <a href="#url" style="color:#4755AB;   font-weight: 400;">责任人</a>
+                  <p>{% for instruction in instructions %}
+                    {% if instruction.URL==name %}
+                        {{instruction.producer}}
+                    {% endif %}
+                {% endfor %}</p>
+                </div>
+                <div class="col-md-6 column mt-4">
+                  <a href="#url" style="color:#4755AB;   font-weight: 400;">来源</a>
+                  <p>{% for instruction in instructions %}
+                    {% if instruction.URL==name %}
+                        {{instruction.resource}}
+                    {% endif %}
+                {% endfor %} </p>
+                </div>
+                <div class="col-md-6 column mt-4">
+                    <a href="#url" style="color:#4755AB;   font-weight: 400;">视频时长</a>
+                    <p>{% for instruction in instructions %}
+                        {% if instruction.URL==name %}
+                            {{instruction.length}}
+                        {% endif %}
+                    {% endfor %} </p>
+                  </div>
+                  <div class="col-md-6 column mt-4">
+                    <a href="#url" style="color:#4755AB;   font-weight: 400;">视频大小</a>
+                    <p>{% for instruction in instructions %}
+                        {% if instruction.URL==name %}
+                            {{instruction.size}}
+                        {% endif %}
+                    {% endfor %} </p>
+                  </div>
+                <div class="col-md-6 column mt-4">
+                    <a href="#url" style="color:#4755AB;   font-weight: 400;">拍摄日期</a>
+                    <p>{% for instruction in instructions %}
+                        {% if instruction.URL==name %}
+                            {{instruction.video_date}}
+                        {% endif %}
+                    {% endfor %} </p>
+                  </div>
+                  <div class="col-md-6 column mt-4">
+                    <a href="#url" style="color:#4755AB;   font-weight: 400;">上传日期</a>
+                    <p>{% for instruction in instructions %}
+                        {% if instruction.URL==name %}
+                            {{instruction.release_date}}
+                        {% endif %}
+                    {% endfor %} </p>
+                  </div>
+                  <button type="button" style="margin-right:300px; margin-top:65px" class="btn btn-primary btn-style" onclick="dianwo1()" >details</button>
+              </div>
+            </div>
+            <div class="col-md-6 mt-md-0 mt-5 cwp23-img">
+                <video controls height="376"
+                src="{{ url_for('static', filename= name )}}"
+                width="530">
+         </video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- //content block style 7 -->
+  
+
+
+
+        </section>
+        <!-- //forms -->
+        </section>
+        <!-- //forms  -->
+    </div>
+{% endblock %}

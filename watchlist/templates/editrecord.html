@@ -1,0 +1,398 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+ <div class="container-fluid content-top-gap">
+
+        <!-- breadcrumbs -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb my-breadcrumb">
+
+            </ol>
+        </nav>
+        <!-- //breadcrumbs -->
+        <!-- forms -->
+        <section class="forms">
+            <!-- forms 1 -->
+            <div class="card card_border py-2 mb-4">
+                <div class="cards__heading">
+                    <h3>编辑音频信息<span></span></h3>
+                </div>
+                <div class="card-body">
+                    <form action="#" method="post" class="was-validated">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+<label for="inputAddress" class="icol-sm-2 col-form-label input__label">标题</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="title" autocomplete="off"  value="{{ records.title }}" required>
+								<div class="invalid-feedback">请填写标题！</div>
+							</div>
+
+							<div class="form-group col-md-6">
+<label for="inputAddress" class="icol-sm-2 col-form-label input__label">拍摄地点</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								     name="pro_loca" autocomplete="off"  value="{{ records.pro_loca }}">
+							</div>
+							<div class="form-group col-md-6">
+<label for="inputAddress" class="icol-sm-2 col-form-label input__label">表演单位</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="provider" autocomplete="off"  value="{{ records.provider }}">
+							</div>
+							<div class="form-group col-md-6">
+<label for="inputAddress" class="icol-sm-2 col-form-label input__label">音频录制时间</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="record_date" autocomplete="off"  value="{{ records.record_date }}">
+							</div>
+							<div class="form-group col-md-6">
+<label for="inputAddress" class="icol-sm-2 col-form-label input__label">音频发布时间</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="release_date" autocomplete="off"  value="{{ records.release_date }}">
+							</div>
+							<div class="form-group col-md-6">
+<label for="inputAddress" class="icol-sm-2 col-form-label input__label">音频形式</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="singing_form" autocomplete="off"  value="{{ records.singing_form }}">
+							</div><div class="form-group col-md-6">
+<label for="inputAddress" class="icol-sm-2 col-form-label input__label">
+							声道数 </label><input type="text" class="form-control input-style" id="inputAddress" name="sound_track" autocomplete="off"  value="{{ records.sound_track }}">
+							</div><div class="form-group col-md-6">
+<label for="inputAddress" class="icol-sm-2 col-form-label input__label">
+							音频长度 </label><input type="text" class="form-control input-style" id="inputAddress" name="length" autocomplete="off"  value="{{ records.length }}">
+							</div><div class="form-group col-md-6">
+<label for="inputAddress" class="icol-sm-2 col-form-label input__label">
+							比特率 </label><input type="text" class="form-control input-style" id="inputAddress" name="bit_rate" autocomplete="off"  value="{{ records.bit_rate }}">
+				</div>
+
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">音频模式 </label>
+                    <input type="text" class="form-control input-style" id="inputAddress" name="mode" autocomplete="off"  value="{{ records.mode }}">
+				</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">交替题名</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="alternate_title" autocomplete="off"  value="{{ records.alternate_title }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">其他题名信息</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="other_title_info" autocomplete="off"  value="{{ records.other_title_info }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">系列题名</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="series_title" autocomplete="off"  value="{{ records.series_title }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">并列系列题名</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="parallel_series_title" autocomplete="off"  value="{{ records.parallel_series_title }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">分集总数</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="total_episodes" autocomplete="off"  value="{{ records.total_episodes }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">分集次</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="episode" autocomplete="off"  value="{{ records.episode }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">个人名称</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="individual_name" autocomplete="off"  value="{{ records.individual_name }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">团队名称</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="group_name" autocomplete="off"  value="{{ records.group_name }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">会议名称</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="conference_name" autocomplete="off"  value="{{ records.conference_name }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">责任者并列名</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="joint_author_name" autocomplete="off"  value="{{ records.joint_author_name }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">其他信息</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="other_info" autocomplete="off"  value="{{ records.other_info }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">责任方式</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="bearing_method" autocomplete="off"  value="{{ records.bearing_method }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">版本</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="version" autocomplete="off"  value="{{ records.version }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">出版者</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="producer" autocomplete="off"  value="{{ records.producer }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">出版日期</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="public_date" autocomplete="off"  value="{{ records.public_date }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">获奖</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="award" autocomplete="off"  value="{{ records.award }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">唱法</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="singing_style" autocomplete="off"  value="{{ records.singing_style }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">声部</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="parts" autocomplete="off"  value="{{ records.parts }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">演奏形式</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="perform_form" autocomplete="off"  value="{{ records.perform_form }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">附注</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="notes" autocomplete="off"  value="{{ records.notes }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">检索途径</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="search_method" autocomplete="off"  value="{{ records.search_method }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">关键词</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="key_word" autocomplete="off"  value="{{ records.key_word }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">节目类型</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="perf_type" autocomplete="off"  value="{{ records.perf_type }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">节目形态</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="perf_form" autocomplete="off"  value="{{ records.perf_form }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">数量</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="sum" autocomplete="off"  value="{{ records.sum }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">入点</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="mesh_point" autocomplete="off"  value="{{ records.mesh_point }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">音频采样频率</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="audio_sampling_frequency" autocomplete="off"  value="{{ records.audio_sampling_frequency }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">音频位深度</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="depth" autocomplete="off"  value="{{ records.depth }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">声道编号</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="language_id" autocomplete="off"  value="{{ records.language_id }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">声道语种</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="language_type" autocomplete="off"  value="{{ records.language_type }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">受众</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="audience" autocomplete="off"  value="{{ records.audience }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">资源获得方式</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="resource" autocomplete="off"  value="{{ records.resource }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">原版本</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="ori_form" autocomplete="off"  value="{{ records.ori_form }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">其他版本</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="other_form" autocomplete="off"  value="{{ records.other_form }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">包含</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="inclusion" autocomplete="off"  value="{{ records.inclusion }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">包含于</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="included" autocomplete="off"  value="{{ records.included }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">参考</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="referring" autocomplete="off"  value="{{ records.referring }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">被参考</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="reference" autocomplete="off"  value="{{ records.reference }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">版权拥有者</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="copyright_holder" autocomplete="off"  value="{{ records.copyright_holder }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">版权声明</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="copyright_notice" autocomplete="off"  value="{{ records.copyright_notice }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">授权使用方式</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="authorize_person" autocomplete="off"  value="{{ records.authorize_person }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">授权使用方式</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="authorize_form" autocomplete="off"  value="{{ records.authorize_form }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">授权起始日期</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="authorize_date" autocomplete="off"  value="{{ records.authorize_date }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">授权使用期限</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="authorize_due" autocomplete="off"  value="{{ records.authorize_due }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">授权使用地域</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="authorize_area" autocomplete="off"  value="{{ records.authorize_area }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">授权文件</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="authorize_file" autocomplete="off"  value="{{ records.authorize_file }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">其他信息</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="authorize_info" autocomplete="off"  value="{{ records.authorize_info }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">时间范围</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="time_length" autocomplete="off"  value="{{ records.time_length }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">空间范围</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="space_length" autocomplete="off"  value="{{ records.space_length }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">源载体</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="source_carrier" autocomplete="off"  value="{{ records.source_carrier }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">征集人</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="collect_person" autocomplete="off"  value="{{ records.collect_person }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">加工单位</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="process_unit" autocomplete="off"  value="{{ records.process_unit }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">服务方式</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="serve_form" autocomplete="off"  value="{{ records.serve_form }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">服务栏目</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="serve_column" autocomplete="off"  value="{{ records.serve_column }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">服务时间</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="serve_time" autocomplete="off"  value="{{ records.serve_time }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">服务地址</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="serve_addr" autocomplete="off"  value="{{ records.serve_addr }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">服务对象</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="serve_obj" autocomplete="off"  value="{{ records.serve_obj }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">验收时间</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="acce_time" autocomplete="off"  value="{{ records.acce_time }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">验收方式</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="acce_form" autocomplete="off"  value="{{ records.acce_form }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">验收人</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="acce_person" autocomplete="off"  value="{{ records.acce_person }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">验收意见</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="acce_opi" autocomplete="off"  value="{{ records.acce_opi }}">
+</div>
+                <div class="form-group col-md-6">
+                    <label for="inputAddress" class="icol-sm-2 col-form-label input__label">验收报告</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="acce_repo" autocomplete="off"  value="{{ records.acce_repo }}">
+</div>
+
+
+
+
+
+
+                        </div>
+    					<input  type="submit" name="submit" value="更新"  class="btn btn-primary btn-style mt-4">
+
+                    </form>
+                </div>
+            </div>
+            <!-- //forms 1 -->
+
+
+        </section>
+        <!-- //forms -->
+        </section>
+{% endblock %}

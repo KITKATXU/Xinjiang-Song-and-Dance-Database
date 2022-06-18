@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+ <div class="container-fluid content-top-gap">
+
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb my-breadcrumb">
+
+
+      </ol>
+    </nav>
+    <div class="welcome-msg pt-3 pb-4">
+      <h1> <span class="text-primary">新疆歌舞数据库管理系统</span></h1>
+      {% if current_user.is_authenticated %}
+      <p> <span class="text-primary">{{ user.name }}</span>, 欢迎回来</p>
+      {% else %}
+      <p> <span class="text-primary">未登录</span></p>
+      {% endif %}
+    </div>
+
+    <!-- statistics data -->
+    <div class="statistics">
+      <div class="row">
+        <div class="col-xl-6 pr-xl-2">
+          <div class="row">
+            <div class="col-sm-6 pr-sm-2 statistics-grid">
+              <div class="card card_border border-primary-top p-4">
+                <i class="lnr lnr-eye"> </i>
+                <h3 class="text-primary number">{{ dnum }} records</h3>
+                <p class="stat-text">文献</p>
+              </div>
+            </div>
+            <div class="col-sm-6 pl-sm-2 statistics-grid">
+              <div class="card card_border border-primary-top p-4">
+                <i class="lnr lnr-eye"> </i>
+                <h3 class="text-secondary number">{{ inum }} records</h3>
+                <p class="stat-text">视频</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-6 pl-xl-2">
+          <div class="row">
+            <div class="col-sm-6 pr-sm-2 statistics-grid">
+              <div class="card card_border border-primary-top p-4">
+                <i class="lnr lnr-eye"> </i>
+                <h3 class="text-success number">{{ mnum }} records</h3>
+                <p class="stat-text">音乐</p>
+              </div>
+            </div>
+            <div class="col-sm-6 pl-sm-2 statistics-grid">
+              <div class="card card_border border-primary-top p-4">
+                <i class="lnr lnr-eye"> </i>
+                <h3 class="text-danger number">{{ pnum }} records</h3>
+                <p class="stat-text">图片</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //statistics data -->
+
+    <!-- our-->
+    <div class="data-tables">
+      <div class="row">
+        <div class="col-lg-12 chart-grid mb-4">
+          <div class="card card_border p-4">
+            <div class="card-header chart-grid__header pl-0 pt-0">
+              全部资源
+            </div>
+               {% for message in get_flashed_messages() %}
+        <div class="alert">{{ message }}</div>
+    {% endfor %}
+
+
+    <ul class="drama-list">
+    {% for drama in dramas %}
+    <li>{{ drama.title }} - {{ drama.size }}
+        <span class="float-right">
+            {% if current_user.is_authenticated %}
+            <a class="btn" href="{{ url_for('editvideo',video_id=drama.id) }}" target="_blank">Edit</a>
+            <form class="inline-form" method="post" action="{{ url_for('deletev', video_id=drama.id) }}">
+                <input class="btn" type="submit" name="delete" value="Delete" onclick="return confirm('Are you sure?')">
+            </form>
+            {% endif %}
+            <a class="btn" href="video.html?name={{ drama.URL}}" target="_blank">view</a>
+        </span>
+    </li>
+    {% endfor %}
+</ul>
+<ul class="drama-list">
+    {% for instruction in instructions %}
+    <li>{{ instruction.title }} - {{ instruction.size }}
+        <span class="float-right">
+            {% if current_user.is_authenticated %}
+            <a class="btn" href="{{ url_for('editvideo',video_id=instruction.id) }}" target="_blank">Edit</a>
+            <form class="inline-form" method="post" action="{{ url_for('deletev', video_id=instruction.id) }}">
+                <input class="btn" type="submit" name="delete" value="Delete" onclick="return confirm('Are you sure?')">
+            </form>
+            {% endif %}
+            <a class="btn" href="instruction.html?name={{instruction.URL}}" target="_blank">view</a>
+        </span>
+    </li>
+    {% endfor %}
+</ul>
+<ul class="drama-list">
+    {% for music in musics %}
+    <li>{{ music.title }} - {{ music.size }}
+        <span class="float-right">
+            {% if current_user.is_authenticated %}
+            <a class="btn" href="{{ url_for('editrecord',record_id=music.id) }}" target="_blank">Edit</a>
+            <form class="inline-form" method="post" action="{{ url_for('deleter', record_id=music.id) }}">
+                <input class="btn" type="submit" name="delete" value="Delete" onclick="return confirm('Are you sure?')">
+            </form>
+            {% endif %}
+            <a class="btn" href="music.html?name={{music.URL}}" target="_blank">view</a>
+        </span>
+    </li>
+    {% endfor %}
+</ul>
+<ul class="drama-list">
+
+    {% for picture in pictures %}
+    <li>{{ picture.title }} - {{ picture.size }}
+        <span class="float-right">
+            {% if current_user.is_authenticated %}
+            <a class="btn" href="{{ url_for('editpicture',picture_id=picture.id) }}" target="_blank">Edit</a>
+            <form class="inline-form" method="post" action="{{ url_for('deletep', picture_id=picture.id) }}">
+                <input class="btn" type="submit" name="delete" value="Delete" onclick="return confirm('Are you sure?')">
+            </form>
+            {% endif %}
+            <a class="btn" href="picture.html?name={{picture.URL}}" target="_blank">view</a>
+        </span>
+    </li>
+    {% endfor %}
+</ul>
+              <ul class="drama-list">
+
+    {% for document in documents %}
+    <li>{{ document.title }} - {{ document.size }}
+        <span class="float-right">
+            {% if current_user.is_authenticated %}
+            <a class="btn" href="{{ url_for('editdocument',document_id=document.id) }}" target="_blank">Edit</a>
+            <form class="inline-form" method="post" action="{{ url_for('deleted', document_id=document.id) }}">
+                <input class="btn" type="submit" name="delete" value="Delete" onclick="return confirm('Are you sure?')">
+            </form>
+            {% endif %}
+            <a class="btn" href="document.html?name={{document.URL}}" target="_blank">view</a>
+        </span>
+    </li>
+    {% endfor %}
+</ul>
+<img alt="Walking Totoro" class="totoro" src="{{ url_for('static', filename='images/totoro.gif') }}" title="to~to~ro~">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //our -->
+
+     <!-- accordions -->
+      <div class="accordions">
+        <div class="row">
+          <!-- accordion style 1 -->
+          <div class="col-lg-12 mb-4">
+            <div class="card card_border">
+              <div class="card-header chart-grid__header">
+                数据库介绍
+              </div>
+              <div class="card-body">
+                <div class="accordion" id="accordionExample">
+                  <div class="card">
+                    <div class="card-header bg-white p-0" id="headingOne">
+                      <a href="#" class="card__title p-3" data-toggle="collapse" data-target="#collapseOne"
+                        aria-expanded="true" aria-controls="collapseOne">数据库规模</a>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                      data-parent="#accordionExample">
+                      <div class="card-body para__style">
+                        80.0KiB
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header bg-white p-0" id="headingTwo">
+                      <a href="#" class="card__title p-3" data-toggle="collapse" data-target="#collapseTwo"
+                        aria-expanded="false" aria-controls="collapseTwo">数据库信息</a>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                      <div class="card-body para__style">
+                        <p>默认集合：utf8mb4_0900_ai_ci</p>
+                        <p>默认字符集：utf8mb4</p>
+                        <p>表数：5</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-header bg-white p-0" id="headingThree">
+                      <a href="#" class="card__title p-3" data-toggle="collapse" data-target="#collapseThree"
+                        aria-expanded="false" aria-controls="collapseThree">数据库</a>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                      data-parent="#accordionExample">
+                      <div class="card-body para__style">
+                        新疆歌舞资源数据库对新疆歌舞文献、视频、图片、音频四种不同种类的资源进行了全面、系统、科学、高效的管理和应用。
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //accordion style 1 -->
+        </div>
+      </div>
+      <!-- //accordions -->
+
+
+  </div>
+{% endblock %}
