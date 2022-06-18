@@ -1,0 +1,306 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid content-top-gap">
+
+        <!-- breadcrumbs -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb my-breadcrumb">
+
+            </ol>
+        </nav>
+        <!-- //breadcrumbs -->
+        <!-- forms -->
+        <section class="forms">
+            <!-- forms 1 -->
+            <div class="card card_border py-2 mb-4">
+                <div class="cards__heading">
+                    <h3>编辑文本信息<span></span></h3>
+                </div>
+                <div class="card-body">
+                    <form action="#" method="post" class="was-validated">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+<label for="inputAddress" class="icol-sm-2 col-form-label input__label">标题</label>
+                            <input type="text" class="form-control input-style" id="inputAddress"
+								   name="title" autocomplete="off"  value="{{ documents.title }}" required>
+								<div class="invalid-feedback">请填写标题！</div>
+							</div>
+							<div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">并列题名</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="parallel_title" autocomplete="off" value="{{ documents.parallel_title }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">交替题名</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="alternate_title" autocomplete="off" value="{{ documents.alternate_title }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">其他题名信息</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="other_title_info" autocomplete="off" value="{{ documents.other_title_info }}">
+		</div>
+                            <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">个人名称</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="individual_name" autocomplete="off"  value="{{ documents.individual_name }}">
+		</div>
+		<div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">团体名称</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="group_name" autocomplete="off"  value="{{ documents.group_name }}">
+		</div>
+		<div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">会议名称</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="conference_name" autocomplete="off" value="{{ documents.conference_name }}">
+		</div>
+		<div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">责任者并列名</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="joint_author_name" autocomplete="off" value="{{ documents.joint_author_name }}">
+		</div>
+		<div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">其他信息</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="other_info" autocomplete="off" value="{{ documents.other_info }}">
+		</div>
+		<div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">责任方式</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="bearing_method" autocomplete="off" value="{{ documents.bearing_method }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">版本</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="version" autocomplete="off"value="{{ documents.version }}">
+		</div>
+		<div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">出版地</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="pro_loca" autocomplete="off"  value="{{ documents.pro_loca }}">
+		</div>
+		<div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">出品者</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="producer" autocomplete="off" value="{{ documents.producer }}">
+		</div>
+		<div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">出版日期</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="public_date" autocomplete="off" value="{{ documents.public_date}}">
+		</div>
+		<div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">发布时间</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="release_date" autocomplete="off"  value="{{ documents.release_date }}">
+		</div>
+		<div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">摘要</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="abstract" autocomplete="off" value="{{ documents.abstract }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">目次</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="catalog" autocomplete="off"   value="{{ documents.catalog }}">
+		</div>
+		<div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">获奖</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="award" autocomplete="off"  value="{{ documents.award }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">附注</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="notes" autocomplete="off"  value="{{ documents.notes }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">检索途径</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="search_method" autocomplete="off"  value="{{ documents.search_method }}">
+		</div>
+		<div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">关键词</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="key_word" autocomplete="off"  value="{{ documents.key_word }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">数量</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="sum" autocomplete="off"  value="{{ documents.sum }}">
+		</div>
+
+		<div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">受众</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="audience" autocomplete="off"  value="{{ documents.audience }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">资源获得方式</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="resource" autocomplete="off"  value="{{ documents.resource }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">资源提供者</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="provider" autocomplete="off"  value="{{ documents.provider }}">
+		</div>
+		<div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">包含</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="inclusion" autocomplete="off"  value="{{ documents.inclusion }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">包含于</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="included" autocomplete="off"  value="{{ documents.included }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">版权拥有者</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="copyright_holder" autocomplete="off"  value="{{ documents.copyright_holder }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">版权声明</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="copyright_notice" autocomplete="off"  value="{{ documents.copyright_notice }}">
+		</div>
+		<div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">授权使用者</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="authorize_person" autocomplete="off"  value="{{ documents.authorize_person }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">授权使用方式</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="authorize_form" autocomplete="off"  value="{{ documents.authorize_form }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">授权起始日期</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="authorize_date" autocomplete="off"  value="{{ documents.authorize_date }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">授权使用期限</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="authorize_due" autocomplete="off"  value="{{ documents.authorize_due }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">授权使用地域</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="authorize_area" autocomplete="off"  value="{{ documents.authorize_area }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">授权文件</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="authorize_file" autocomplete="off"  value="{{ documents.authorize_file }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">其他信息</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="authorize_info" autocomplete="off"  value="{{ documents.authorize_info }}">
+		</div>
+		<div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">时间范围</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="time_length" autocomplete="off"  value="{{ documents.time_length }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">空间范围</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="space_length" autocomplete="off"  value="{{ documents.space_length }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">源载体</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="source_carrier" autocomplete="off"  value="{{ documents.source_carrier }}">
+		</div>
+		<div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">馆藏地</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="collect_area" autocomplete="off" value="{{ documents.collect_area }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">馆藏单位</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="collect_unit" autocomplete="off" value="{{ documents.collect_unit }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">索取号</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="call_number" autocomplete="off" value="{{ documents.call_number }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">征集人</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="collect_person" autocomplete="off"  value="{{ documents.collect_person }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">加工单位</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="process_unit" autocomplete="off"  value="{{ documents.process_unit }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">服务方式</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="serve_form" autocomplete="off"  value="{{ documents.serve_form }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">服务栏目</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="serve_column" autocomplete="off"  value="{{ documents.serve_column }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">服务时间</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="serve_time" autocomplete="off"  value="{{ documents.serve_time }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">服务地址</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="serve_addr" autocomplete="off"  value="{{ documents.serve_addr }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">服务对象</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="serve_obj" autocomplete="off"  value="{{ documents.serve_obj }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">验收时间</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="acce_time" autocomplete="off"  value="{{ documents.acce_time }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">验收方式</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="acce_form" autocomplete="off"  value="{{ documents.acce_form }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">验收人</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="acce_person" autocomplete="off"  value="{{ documents.acce_person }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">验收意见</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="acce_opi" autocomplete="off"  value="{{ documents.acce_opi }}">
+		</div>
+        <div class="form-group col-md-6">
+<label for="inputAddress" class="input__label">验收报告</label>
+		<input type="text" class="form-control input-style" id="inputAddress"
+			   name="acce_repo" autocomplete="off"  value="{{ documents.acce_repo }}">
+		</div>
+                        </div>
+    					<input  type="submit" name="submit" value="更新"  class="btn btn-primary btn-style mt-4">
+
+                    </form>
+                </div>
+            </div>
+            <!-- //forms 1 -->
+        </section>
+        <!-- //forms -->
+        </section>
+{% endblock %}

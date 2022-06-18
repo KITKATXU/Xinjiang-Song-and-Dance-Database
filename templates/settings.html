@@ -1,0 +1,44 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+ <div class="container-fluid content-top-gap">
+
+        <!-- breadcrumbs -->
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb my-breadcrumb">
+
+            </ol>
+        </nav>
+        <!-- //breadcrumbs -->
+        <!-- forms -->
+        <section class="forms">
+            <!-- forms 1 -->
+            <div class="card card_border py-2 mb-4">
+                <div class="cards__heading">
+                    <h3>设置<span></span></h3>
+                </div>
+                <div class="card-body">
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <label for="inputAddress" class="input__label">名字</label>
+                            <input type="text" class="form-control input-style" id="inputAddress" placeholder="在这里输入新的名字"
+                                   name="name" required value="{{ current_user.name }}">
+
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-style mt-4">保存</button>
+                    </form>
+                </div>
+            </div>
+            <!-- //forms 1 -->
+
+
+        </section>
+        <!-- //forms -->
+        </section>
+        <!-- //forms  -->
+
+    </div>
+{% endblock %}

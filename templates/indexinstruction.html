@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+ <div class="container-fluid content-top-gap">
+
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb my-breadcrumb">
+
+
+      </ol>
+    </nav>
+    <div class="welcome-msg pt-3 pb-4">
+      <h1> <span class="text-primary">新疆歌舞数据库管理系统</span></h1>
+      {% if current_user.is_authenticated %}
+      <p> <span class="text-primary">{{ user.name }}</span>, 欢迎回来</p>
+      {% else %}
+      <p> <span class="text-primary">未登录</span></p>
+      {% endif %}
+    </div>
+
+
+    <!-- our-->
+    <div class="data-tables">
+      <div class="row">
+        <div class="col-lg-12 chart-grid mb-4">
+          <div class="card card_border p-4">
+            <div class="card-header chart-grid__header pl-0 pt-0">
+              教程资源
+</div>
+               {% for message in get_flashed_messages() %}
+        <div class="alert">{{ message }}</div>
+    {% endfor %}
+    {% if current_user.is_authenticated %}
+    <a href="{{ url_for('addvideo') }}"  class="btn btn-style btn-primary mr-2">+</a>
+  {% endif %}
+
+<ul class="drama-list">
+    {% for instruction in instructions %}
+    <li>{{ instruction.title }}
+        <span class="float-right">
+            {% if current_user.is_authenticated %}
+            <a class="btn" href="{{ url_for('editvideo',video_id=instruction.id) }}">Edit</a>
+            <form class="inline-form" method="post" action="{{ url_for('deletev', video_id=instruction.id) }}">
+                <input class="btn" type="submit" name="delete" value="Delete" onclick="return confirm('Are you sure?')">
+            </form>
+            {% endif %}
+            <a class="btn" href="instruction.html?name={{instruction.URL}}" target="_blank">view</a>
+        </span>
+    </li>
+    {% endfor %}
+</ul>
+<img alt="Walking Totoro" class="totoro" src="{{ url_for('static', filename='images/totoro.gif') }}" title="to~to~ro~">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //our -->
+
+
+  </div>
+{% endblock %}
