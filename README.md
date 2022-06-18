@@ -1,14 +1,16 @@
 # xinjiang song and dance
 
-# Setup
+Setup
 
 All code were developed and tested on pycharm with Python 3.10, and were implemented by flask-sqlalchemy==2.5.1
+
 
 You can create & active virtual enviroment then install dependencies:
 
 $ pip install -r requirements.txt
 
+
 generate data with xinjiang.sql then run:
 
 $ flask run
-
+* Running on http://127.0.0.1:5000/
